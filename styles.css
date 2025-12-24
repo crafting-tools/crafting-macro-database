@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ledger', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  background-color: #e3ded3;
+}
+
+/* Craft name styling with Stoke font */
+.craft-name {
+  font-family: 'Stoke', serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #3E3832;
+}
+
+/* Subtitle styling with La Belle Aurore font */
+.subtitle {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 1.25rem;
+}
+
+/* Color variables for the theme */
+:root {
+  --bg-primary: #e3ded3;
+  --bg-card: #f5f3ef;
+  --bg-darker: #D4C5B0;
+  --text-primary: #3E3832;
+  --text-secondary: #6B6560;
+  --border-color: #C5B89A;
+  --accent-brown: #8B6F47;
+  --accent-red: #7d1d1d;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-brown);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Animation for smooth transitions */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+/* Material icons alignment fix */
+.material-icons {
+  vertical-align: middle;
+  user-select: none;
+}
+
+/* Star rating styling */
+.star-filled {
+  color: #D4A574;
+}
+
+.star-empty {
+  color: #C5B89A;
+}
+
+/* Macro code block styling */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Form styling */
+.form-input {
+  background-color: #e3ded3;
+  border: 1px solid #C5B89A;
+  color: #3E3832;
+}
+
+.form-input::placeholder {
+  color: #9B8F84;
+}
+
+.form-label {
+  color: #3E3832;
+}
+
+/* Form input focus states */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 111, 71, 0.2);
+}
+
+/* Button hover effects */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Card styling */
+.craft-card {
+  background-color: var(--bg-card);
+  box-shadow: 0 1px 3px rgba(62, 56, 50, 0.2);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  margin-right: 20px;
+}
+
+.craft-card:hover {
+  box-shadow: 0 2px 8px rgba(62, 56, 50, 0.2);
+}
+
+/* Search section styling */
+.search-section {
+  background-color: #D4C5B0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 2px 4px rgba(62, 56, 50, 0.15);
+}
+
+/* Card hover effect */
+.bg-gray-800 {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .action-buttons {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .search-mode-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Print styles */
+@media print {
+  button,
+  input,
+  select {
+    display: none;
+  }
+
+  .bg-gray-800,
+  .bg-gray-900 {
+    background: white !important;
+    color: black !important;
+  }
+}
