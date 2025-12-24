@@ -8,7 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  background-color: #e3ded3;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Craft name styling with Stoke font */
@@ -16,7 +18,7 @@ body {
   font-family: 'Stoke', serif;
   font-weight: 400;
   letter-spacing: 0.02em;
-  color: #3E3832;
+  color: var(--text-primary);
 }
 
 /* Subtitle styling with La Belle Aurore font */
@@ -35,6 +37,26 @@ body {
   --border-color: #C5B89A;
   --accent-brown: #8B6F47;
   --accent-red: #7d1d1d;
+  --star-filled: #D4A574;
+  --star-empty: #C5B89A;
+  --form-input-bg: #e3ded3;
+  --form-input-placeholder: #9B8F84;
+}
+
+/* Dark mode color variables */
+[data-theme="dark"] {
+  --bg-primary: #1a1614;
+  --bg-card: #2a2521;
+  --bg-darker: #3a342f;
+  --text-primary: #e3ded3;
+  --text-secondary: #c5b89a;
+  --border-color: #4a4239;
+  --accent-brown: #a88959;
+  --accent-red: #c43a3a;
+  --star-filled: #d4a574;
+  --star-empty: #6b6560;
+  --form-input-bg: #3a342f;
+  --form-input-placeholder: #6b6560;
 }
 
 /* Scrollbar styling */
@@ -75,11 +97,11 @@ input[type="checkbox"] {
 
 /* Star rating styling */
 .star-filled {
-  color: #D4A574;
+  color: var(--star-filled);
 }
 
 .star-empty {
-  color: #C5B89A;
+  color: var(--star-empty);
 }
 
 /* Macro code block styling */
@@ -90,17 +112,17 @@ pre {
 
 /* Form styling */
 .form-input {
-  background-color: #e3ded3;
-  border: 1px solid #C5B89A;
-  color: #3E3832;
+  background-color: var(--form-input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 .form-input::placeholder {
-  color: #9B8F84;
+  color: var(--form-input-placeholder);
 }
 
 .form-label {
-  color: #3E3832;
+  color: var(--text-primary);
 }
 
 /* Form input focus states */
@@ -164,6 +186,93 @@ button:active {
   .search-mode-buttons {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Dark mode toggle as floating button in bottom left */
+  .top-controls {
+    display: block;
+  }
+
+  .theme-toggle {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 0.75rem !important;
+    min-width: auto;
+  }
+
+  .theme-toggle-text {
+    display: none;
+  }
+
+  /* Center and fill row with manage class stats and import/export buttons */
+  .action-buttons-top {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .action-buttons-top button,
+  .action-buttons-top label {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Make add new button span screen with more padding */
+  .add-new-row {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .add-new-btn {
+    width: 100%;
+    margin-left: 0 !important;
+    justify-content: center;
+  }
+
+  /* Stack craft title, class and level vertically on mobile */
+  .craft-card-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    position: relative;
+    padding-right: 80px !important;
+  }
+
+  .craft-title-section {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .craft-meta-section {
+    margin-left: 0 !important;
+    width: calc(100% - 80px);
+    justify-content: flex-start;
+    gap: 1rem !important;
+  }
+
+  /* Keep class info and level in normal flow, but position buttons absolutely */
+  .craft-class-info,
+  .craft-level {
+    position: static !important;
+  }
+
+  /* Position edit, expand, delete buttons absolutely on the right */
+  .craft-card-header .craft-meta-section > span.material-icons:nth-child(3) {
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+  }
+
+  .craft-card-header .craft-meta-section > span.material-icons:nth-child(4) {
+    position: absolute;
+    top: 1rem;
+    right: 2.5rem;
+  }
+
+  .craft-card-header button[title="Delete"] {
+    top: 1rem;
   }
 }
 
